@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Nicholas' Website" />
+	<meta name="keywords" content="HTML" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css">
+	<title>Nicholas' Website</title>
+</head>
+
+<body>
+	<header>
+		
+		<section id="user-info-component">
+			<div id="user-info" style="display: none;">
+				<nav>
+					<a href="index.html">Home</a> |
+					<a class="active" href="#home">About Me</a> |
+					<a href="projects.html">Projects</a> |
+					<a href="resume.html">Resume</a>
+                </nav>
+			</div>
+
+			<h1>Hi, I'm Nick!</h1>
+
+			<script>
+				document.getElementById('user-info').style.display = 'block';
+			</script>
+			<noscript class="error">Error: JavaScript is disabled or blocked.</noscript>
+		</section>
+	</header>
+
+	<main>
+		<section class="about">
+
+			<p> I am currently in my last quarter at University of California, San Diego and love working with software. I've been very interested in this profession since high school, and
+                continuing my journey towards the end of college, I have been a part of projects that have changed my perspective of how 
+                impactful software engineers can be. For example, working with medical data to satellite imagery, the scope of what I thought 
+                a software engineer could do has broadened.
+            </p>
+
+			<br>
+			<br>
+
+            <p> Throughout my time at UCSD, I have been given many opportunities to grow regarding the courses
+                I take, ranging from Data Structures & Algorithms, Web Design, and Discrete Mathematics to 3D Graphics, Databases, and Machine Learning.
+                Most importantly, being able to implement the knowledge I gained from these courses into real world applications solidified 
+                my continuously-growing passion in this field.
+            </p>
+
+			<br>
+			<p>
+			I currently am proficient in the following programming languages: C++, Python, C, and Javascript. I have utilized
+			these languages in an academic, professional, and personal work setting. Check out my <a href="projects.html"><i>projects</i></a> to
+			learn more about my experience utilizing these languages.	
+			</p>
+			<br>
+
+			</p>
+
+            <picture class="nick">
+                <source srcset="images/ntran.jpg" media="(orientation: portrait)" />
+                <img id="nick_pic"src="images/ntran.jpg" alt="Nicholas Tran" height="130" width="130" />
+            </picture>
+
+            <br>
+            <br>
+		</section>
+	</main>
+
+	<footer>
+		<hr/>
+	</footer>
+</body>
+
+</html>

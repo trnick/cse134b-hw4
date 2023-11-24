@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Nicholas' Website" />
+	<meta name="keywords" content="HTML" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+	<title>Nicholas' Website</title>
+</head>
+
+<body>
+	<header>
+		
+		<section id="user-info-component">
+			<div id="user-info" style="display: none;">
+				<nav>
+					<a href="index.html">Home</a> |
+					<a href="about.html">About Me</a> |
+                    <a class="active" href="#home">Projects</a> |
+					<a href="resume.html">Resume</a>
+				  </nav>
+			</div>
+
+			<h1>My Projects</h1>
+
+			<script>
+				document.getElementById('user-info').style.display = 'block';
+			</script>
+			<noscript class="error">Error: JavaScript is disabled or blocked.</noscript>
+		</section>
+	</header>
+
+	<main>
+		<section class="projects">
+            <h3> Blockchain Simulation Bot </h3>        
+            <table>
+                <colgroup>
+                    <col span="4">
+                </colgroup>
+                <th><pre>Languages:</pre></th>
+                <tr>
+                </tr>
+                <tr>
+                  <td><code>Python</code>
+                    <svg width="20" height="20">
+                        <circle cx="10" cy="14" r="5"
+                        stroke="green" stroke-width="1" />
+                    </svg> </td>
+                </tr>
+                <tr>
+                  <td><code>JavaScript</code>
+                    <svg width="20" height="20">
+                        <circle cx="10" cy="14" r="5"
+                        stroke="green" stroke-width="1" />
+                    </svg> </td>
+                </tr>
+            </table>
+            
+                <p class="projects_text">I was part of a team of other Computer Science students in a locally held hackathon, Valley Hacks,
+                with the theme of ducation and finance. We collectively decided to develop a Discord bot to simulate how blockchain functions 
+                on a high-level (using our own example cryptocurrency). We achieved second place by coordinating with a team of 
+                other Computer Science students to complete and present our project in three days. Experience collaborating with a team of 
+                unfamiliar programmers, knowledge about developing in Python, understanding of blockchain and it's high-level implementation.
+                </p>
+            <br>
+            <br>
+              
+            <picture class="projects_image">
+                <img src="images/blockchain.png" alt="blockchain" height="460" width="1000" />
+                <figcaption>Blockchain Demo</figcaption>
+            </picture>
+
+
+				<br>
+        </section>
+
+        <br>
+        <br>
+        
+        <section class="projects">
+            <h3> Game Retrieval Bot </h3>
+            <table>
+                <colgroup>
+                    <col span="4">
+                </colgroup>
+                <th> <pre>Languages:</pre></th>
+                <tr>
+                </tr>
+                <tr>
+                <td><code>Javascript</code>                     
+                    <svg width="20" height="20">
+                        <circle cx="10" cy="14" r="5"
+                        stroke="green" stroke-width="1" />
+                    </svg> 
+                </td>
+                </svg> 
+                </tr>
+                <tr>
+                </tr>
+              </table>
+            <br>
+                <p class="text">
+                    Being one of my first projects I have worked on, I wanted to develop a program that assisted others
+                    in a meaningful way. As a result, I decided to work on a Discord bot that retrieved current and relevant information 
+                    about a game that the user was interested in instead of manually searching for it. One of the first experiences developing
+                    on a program alone, performed research on JavaScript and many useful libraries that assisted in implementation.	
+                </p>
+                <br>
+                <br>
+            <picture class="projects_image">
+                <img src="images/retrieval.png" alt="retrieval" height="460" width="1000" />
+                <figcaption>Bot's responses to commands</figcaption>
+            </picture>
+
+		</section>
+	</main>
+
+	<footer>
+		<hr/>
+	</footer>
+</body>
+
+</html>
