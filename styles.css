@@ -30,11 +30,12 @@
   /* Body */
   body {
     font-family: 'proxima-nova', sans-serif;
-    background-color: var(--main-color, #3c424d);
-    color: white;
+    color: black;
     text-align: center;
     justify-content: center;
     line-height: 1.5;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   /* Links */
@@ -333,4 +334,10 @@
   @keyframes fadeOut {
       from {opacity: 1;}
       to {opacity: 0;}
+  }
+
+  /* theme toggle */
+  .dark-mode {
+    background-color: #555;
+    color: white;
   }

@@ -128,3 +128,21 @@ function submit() {
   var formErrorsJSON = JSON.stringify(formErrors);
   console.log("Submitting form errors to server:", formErrorsJSON);
 }
+
+/* pt.4 theme change */
+function themeChange() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+
+  var isDarkMode = element.classList.contains("dark-mode");
+
+  localStorage.setItem("theme", isDarkMode ? "dark-mode" : "light-mode");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var currTheme = localStorage.getItem("theme");
+
+  if (currTheme) {
+    document.body.classList.add(currTheme);
+  }
+});
