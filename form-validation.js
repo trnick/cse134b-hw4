@@ -43,8 +43,6 @@ p_name.addEventListener("input", () => {
       n_error.textContent = "Invalid character.";
       n_error.className = "errorOutput active";
       formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
-      submit();
-      formErrors = [];
     }
   }
 });
@@ -88,6 +86,7 @@ function countChar(val) {
 }
 
 form.addEventListener("submit", (event) => {
+  event.preventDefault(); 
 
   const nameLength = p_name.value.length;
   const p_nameIsValid =  nameLength >= minNameLength && nameLength <= maxNameLength && nameRegExp.test(p_name.value);
@@ -96,8 +95,6 @@ form.addEventListener("submit", (event) => {
     n_error.textContent = "Please enter a valid name.";
     n_error.className = "errorOutput active";
     formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
-    submit();
-    formErrors = [];
   }
   else {
     p_name.className = "valid";
@@ -111,13 +108,14 @@ form.addEventListener("submit", (event) => {
     n_error.textContent = "Please enter a valid email address.";
     n_error.className = "errorOutput active";
     formErrors.push({ message: `Invalid Property in EMail Field`, timestamp: new Date().toISOString() });
-    submit();
-    formErrors = [];
   } else {
     email.className = "valid";
     n_error.textContent = "";
     n_error.className = "errorOutput";
   }
+
+  submit(formErrors);
+  formErrors = [];
 });
 
 function submit() {
