@@ -4,7 +4,7 @@ const email = document.getElementById("mail");
 const comment = document.getElementById('comm');
 const n_error = document.querySelector('.errorOutput');
 
-var formErrors = [];
+var form_errors = [];
 
 const emailRegExp =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -42,7 +42,7 @@ p_name.addEventListener("input", () => {
       p_name.className = "invalid";
       n_error.textContent = "Invalid character.";
       n_error.className = "errorOutput active";
-      formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
+      form_errors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
     }
   }
 });
@@ -94,7 +94,7 @@ form.addEventListener("submit", (event) => {
     p_name.className = "invalid";
     n_error.textContent = "Please enter a valid name.";
     n_error.className = "errorOutput active";
-    formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
+    form_errors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
   }
   else {
     p_name.className = "valid";
@@ -107,14 +107,14 @@ form.addEventListener("submit", (event) => {
     email.className = "invalid";
     n_error.textContent = "Please enter a valid email address.";
     n_error.className = "errorOutput active";
-    formErrors.push({ message: `Invalid Property in EMail Field`, timestamp: new Date().toISOString() });
+    form_errors.push({ message: `Invalid Property in EMail Field`, timestamp: new Date().toISOString() });
   } else {
     email.className = "valid";
     n_error.textContent = "";
     n_error.className = "errorOutput";
   }
 
-  let arr = JSON.stringify(formErrors);
+  let arr = JSON.stringify(form_errors);
 
   fetch('https://httpbin.org/post', {
     method: 'POST',
@@ -126,7 +126,7 @@ form.addEventListener("submit", (event) => {
     .catch(error => console.error('Error:', error));
 
   console.log(arr);
-  formErrors = [];
+  form_errors = [];
 });
 
 /* pt.4 theme change */
