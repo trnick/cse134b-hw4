@@ -59,33 +59,31 @@
 		<button id="themeBut" onclick="themeChange()">Toggle Moon</button>
 		<br>
 		<br>
-		<form id="contactForm" action="https://httpbin.org" method="post">
+		<form id="contactForm" action="https://httpbin.org/post" method="post">
 
 			<label for="name">
 				<span>Name:</span>
 				<input type="text" id="name" name="name" required minlength="0" maxlength="20">
-				<span class="n_error"></span>
 			</label>
 
 			<label for="email">
 				<span>Email:</span>
 				<input type="text" id="mail" name="mail" required minlength="5" maxlength="30">
-				<span class="e_error"></span>
 			</label>
 
 				<label for="comments">
 					<span>Comments:</span>
 					<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 					<textarea id="comm" onkeyup="countChar(this)" maxlength="150"></textarea>
-					<div id="charNum"></div>
 				</label>
 			<input type="hidden" name="possible_bot" value="true">
+
+			<output id="infoOutput"> </output>				
+			<output class="errorOutput"></output>
 			
 			<button type="submit">Submit</button>
+
 		  </form>
-		
-		  <output id="errorOutput" role="alert"></output>
-		  <output id="infoOutput"> </output>
           <br>
           <br>
 	</main>

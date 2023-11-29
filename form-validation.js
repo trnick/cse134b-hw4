@@ -2,8 +2,7 @@ const form = document.querySelector("form");
 const p_name = document.getElementById("name");
 const email = document.getElementById("mail");
 const comment = document.getElementById('comm');
-const n_error = document.querySelector('.n_error');
-const e_error = document.querySelector('.e_error');
+const n_error = document.querySelector('.errorOutput');
 
 var formErrors = [];
 
@@ -35,14 +34,14 @@ p_name.addEventListener("input", () => {
   if (isValid) {
     p_name.className = "valid";
     n_error.textContent = "";
-    n_error.className = "n_error";
+    n_error.className = "errorOutput";
   } 
   else {
     p_name.className = "invalid";
     if (!regexValid) {
       p_name.className = "invalid";
       n_error.textContent = "Invalid character.";
-      n_error.className = "n_error active";
+      n_error.className = "errorOutput active";
       formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
       submit();
       formErrors = [];
@@ -52,11 +51,10 @@ p_name.addEventListener("input", () => {
 
 email.addEventListener("input", () => {
   const isValid = email.value.length === 0 || emailRegExp.test(email.value);
-  const regexValid = emailRegExp.test(email.value);
   if (isValid) {
     email.className = "valid";
-    e_error.textContent = "";
-    e_error.className = "e_error";
+    n_error.textContent = "";
+    n_error.className = "errorOutput";
   } else {
     email.className = "invalid";
   }
@@ -72,9 +70,9 @@ function countChar(val) {
 
   if (len >= maxCommentLength) {
     val.value = val.value.substring(0, maxCommentLength);
-    $('#charNum').text(0);
+    $('#infoOutput').text(0);
   } else {
-    $('#charNum').text(remainingChars);
+    $('#infoOutput').text(remainingChars);
 
     if (remainingChars < 50 && remainingChars > 15) {
       color = 'orange';
@@ -85,20 +83,18 @@ function countChar(val) {
     else {
       color = 'white';
     }
-      charNum.style.color = color;
+    infoOutput.style.color = color;
     }
-
-};
+}
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
 
   const nameLength = p_name.value.length;
   const p_nameIsValid =  nameLength >= minNameLength && nameLength <= maxNameLength && nameRegExp.test(p_name.value);
   if (!p_nameIsValid) {
     p_name.className = "invalid";
     n_error.textContent = "Please enter a valid name.";
-    n_error.className = "n_error active";
+    n_error.className = "errorOutput active";
     formErrors.push({ message: `Invalid Property in Name Field`, timestamp: new Date().toISOString() });
     submit();
     formErrors = [];
@@ -106,21 +102,21 @@ form.addEventListener("submit", (event) => {
   else {
     p_name.className = "valid";
     n_error.textContent = "";
-    n_error.className = "n_error";
+    n_error.className = "errorOutput";
   }
 
   const emailIsValid = email.value.length === 0 || emailRegExp.test(email.value);
   if (!emailIsValid) {
     email.className = "invalid";
-    e_error.textContent = "Please enter a valid email address.";
-    e_error.className = "e_error active";
+    n_error.textContent = "Please enter a valid email address.";
+    n_error.className = "errorOutput active";
     formErrors.push({ message: `Invalid Property in EMail Field`, timestamp: new Date().toISOString() });
     submit();
     formErrors = [];
   } else {
     email.className = "valid";
-    e_error.textContent = "";
-    e_error.className = "e_error";
+    n_error.textContent = "";
+    n_error.className = "errorOutput";
   }
 });
 
@@ -151,7 +147,7 @@ function themeChange() {
 
 document.addEventListener("DOMContentLoaded", function () {
   var currTheme = localStorage.getItem("theme");
-  
+
   const button_text = document.getElementById("themeBut");
   if (currTheme == "dark-mode") {
     button_text.textContent = "Toggle Sun";
