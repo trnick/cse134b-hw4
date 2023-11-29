@@ -329,6 +329,14 @@
   }
   
   /* theme toggle */
+
+  #themeBut {
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .dark-mode {
     background-color: #555;
     color: white;

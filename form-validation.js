@@ -150,6 +150,9 @@ function themeChange() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  document.getElementById('themeBut').style.display = 'block';
+
   var currTheme = localStorage.getItem("theme");
 
   const button_text = document.getElementById("themeBut");
@@ -163,4 +166,5 @@ document.addEventListener("DOMContentLoaded", function () {
   if (currTheme) {
     document.body.classList.add(currTheme);
   }
+  
 });
