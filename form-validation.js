@@ -114,14 +114,20 @@ form.addEventListener("submit", (event) => {
     n_error.className = "errorOutput";
   }
 
-  submit(formErrors);
+  let arr = JSON.stringify(formErrors);
+
+  fetch('https://httpbin.org/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: arr,
+  })
+    .catch(error => console.error('Error:', error));
+
+  console.log(arr);
   formErrors = [];
 });
-
-function submit() {
-  var formErrorsJSON = JSON.stringify(formErrors);
-  console.log("Submitting form errors to server:", formErrorsJSON);
-}
 
 /* pt.4 theme change */
 
