@@ -130,6 +130,7 @@ function submit() {
 }
 
 /* pt.4 theme change */
+
 function themeChange() {
   var element = document.body;
   element.classList.toggle("dark-mode");
@@ -137,10 +138,27 @@ function themeChange() {
   var isDarkMode = element.classList.contains("dark-mode");
 
   localStorage.setItem("theme", isDarkMode ? "dark-mode" : "light-mode");
+
+  const button_text = document.getElementById("themeBut");
+  var currTheme = localStorage.getItem("theme");
+  if (currTheme == "dark-mode") {
+    button_text.textContent = "Toggle Sun";
+  }
+  else if (currTheme == "light-mode"){
+    button_text.textContent = "Toggle Moon";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   var currTheme = localStorage.getItem("theme");
+  
+  const button_text = document.getElementById("themeBut");
+  if (currTheme == "dark-mode") {
+    button_text.textContent = "Toggle Sun";
+  }
+  else if (currTheme == "light-mode"){
+    button_text.textContent = "Toggle Moon";
+  }
 
   if (currTheme) {
     document.body.classList.add(currTheme);
